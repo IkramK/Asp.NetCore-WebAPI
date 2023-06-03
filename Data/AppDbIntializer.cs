@@ -1,4 +1,5 @@
 ﻿using My_Books.Data.Models;
+using My_Books.Data.ViewModels;
 
 namespace My_Books.Data
 {
@@ -9,8 +10,47 @@ namespace My_Books.Data
             using(var serviceScope= applicationBuilder.ApplicationServices.CreateScope())
             {
                 var context = serviceScope.ServiceProvider.GetService<AppDbContext>();
-                if(!context.Books.Any())
+                if (!context.Authers.Any())
                 {
+                    context.Authers.AddRange(new Auther
+                    {
+                        Name = "Khalid",
+                    },
+                    new Auther
+                    {
+                        Name = "Tariq",
+                    },
+                    new Auther
+                    {
+                        Name = "Nasir",
+                    },
+                    new Auther
+                    {
+                        Name = "Yasir",
+                    }
+                    );
+                    context.SaveChanges();
+                }
+                if (!context.Publishers.Any())
+                {
+                    context.Publishers.AddRange(new Publisher
+                    {
+                        Name = "Ikram",
+                    },
+                    new Publisher
+                    {
+                        Name = "Farman",
+                    },
+                    new Publisher
+                    {
+                        Name = "Ehsan",
+                    }
+                    );
+                    context.SaveChanges();
+                }
+                if (!context.Books.Any())
+                {
+
                     context.Books.AddRange(new Book 
                     {
                         Title="1st Book",
@@ -22,6 +62,7 @@ namespace My_Books.Data
                         Author="First Author",
                         CoverUrl="Http...",
                         DateAdded=DateTime.Now,
+                        PubId=1,
 
                     },
                     new Book
@@ -34,6 +75,7 @@ namespace My_Books.Data
                         Author = "First Author",
                         CoverUrl = "Http...",
                         DateAdded = DateTime.Now,
+                        PubId = 2,
 
                     },
                     new Book
@@ -47,7 +89,7 @@ namespace My_Books.Data
                         Author = "First Author",
                         CoverUrl = "Http...",
                         DateAdded = DateTime.Now,
-
+                        PubId = 3,
                     }
                     );
                     context.SaveChanges();

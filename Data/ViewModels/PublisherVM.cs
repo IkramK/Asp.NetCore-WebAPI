@@ -5,7 +5,7 @@ namespace My_Books.Data.ViewModels
     public class PublisherVM
     {
         public int id { get; set; }
-        public int Name { get; set; }
+        public string Name { get; set; }
         public List<Publisher> Publishers { get; set; }
     }
 }

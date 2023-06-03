@@ -19,6 +19,7 @@ namespace My_Books.Data.Models
         public int PubId { get; set; }
         [ForeignKey("PubId")]
         public Publisher Publisher { get; set; }
-
+        //Nevigation properties
+        public List<Books_Authers> Books_Authers { get; set; }
     }
 }

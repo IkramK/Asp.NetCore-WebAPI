@@ -8,11 +8,10 @@ namespace My_Books.Data.ViewModels
         public string? Description { get; set; }
         public bool IsRead { get; set; }
         public string? Genre { get; set; }
-        public string? Author { get; set; }
         public DateTime? DateRead { get; set; }
         public int? Rate { get; set; }
         public string? CoverUrl { get; set; }
-        public List<Auther> Authers { get; set; }
-        public List<Book> Books { get; set; }
+        public int PublisherId { get; set; }
+        public List<int> AutherIds { get; set; }
     }
 }
