@@ -16,10 +16,10 @@ namespace My_Books.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            //modelBuilder.Entity<Book>()
-            //.HasOne(b => b.Publisher)
-            //.WithMany(p => p.Books)
-            //.HasForeignKey(b => b.PublisherId);
+            modelBuilder.Entity<Book>()
+            .HasOne(b => b.Publisher)
+            .WithMany(p => p.Books)
+            .HasForeignKey(b => b.PubId);
         }
     }
 }

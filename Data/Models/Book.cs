@@ -15,8 +15,9 @@ namespace My_Books.Data.Models
         public string? CoverUrl { get; set; }
         public DateTime DateAdded { get; set; }
         //nevigation Properties
-        [ForeignKey("Publisher")]
-        public int PublisherId { get; set; }
+        
+        public int PubId { get; set; }
+        [ForeignKey("PubId")]
         public Publisher Publisher { get; set; }
 
     }
